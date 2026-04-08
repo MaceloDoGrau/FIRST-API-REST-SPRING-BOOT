@@ -1,19 +1,30 @@
-//depois eu irei mexe com isso, tenho q configurar o git/github para esse projeto, e depois praticar
-
 package com.marcelo.marcelao.justATest;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
-
-@SpringBootApplication
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+@RestController
 public class justATest {
-    @GetMapping("/")
-    public String hello()
-    {
-        return "index";
+    int idade = 10;
+    String nome = "andre";
+    /*
+
+    public justATest(int i,String n){
+        this.idade = 10;
+        this.nome = "Macelo";
     }
-    @GetMapping("/number")
-    public int number(){
-        return 10;
+     */
+    @GetMapping("/user")
+    public String getValues(){
+        return "idade ="+Integer.toString(this.idade)+"/ nome = "+this.nome;
+
+        }
+        @RequestMapping("/")
+        @GetMapping
+        public String hi()
+        {
+            return "hi";
+        }
     }
-}
+
